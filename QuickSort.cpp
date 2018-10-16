@@ -30,7 +30,7 @@ int partition2(vector<int>& nums, int left, int right) {
 	while (true) {
 		while (i <= right && nums[i] < v) i++;
 		while (j >= left + 1 && nums[j] > v) j--;
-		if (i > j)
+		if (i >= j)
 			break;
 		swap(nums[i++], nums[j--]);
 	}
@@ -70,8 +70,8 @@ void _quickSort3Ways(vector<int>& nums, int left, int right) {
 
 void quickSort(vector<int>& nums) {
 	srand(time(NULL));
-	//_quickSort(nums, 0, nums.size() - 1);
-	_quickSort3Ways(nums, 0, nums.size() - 1);
+	_quickSort(nums, 0, nums.size() - 1);
+	//_quickSort3Ways(nums, 0, nums.size() - 1);
 }
 
 int main()
